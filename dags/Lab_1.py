@@ -32,7 +32,6 @@ def etl_openmeteo_to_snowflake():
 
     conn, cur = get_conn_and_cur()
 
-    # Use ? placeholders (most reliable with Snowflake Python connector)
     insert_stage_sql = """
         INSERT INTO WEATHER_STAGE
         (location_name, latitude, longitude, date, temp_max, temp_min, temp_mean)
